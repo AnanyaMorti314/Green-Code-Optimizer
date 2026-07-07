@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-gray-950 text-gray-100 font-sans; }
+
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.score-ring {
+  stroke-dasharray: 283;
+  stroke-dashoffset: calc(283 - (283 * var(--score)) / 100);
+  transition: stroke-dashoffset 1s ease;
+}
+
+/* Code highlight glow for issues */
+.highlight-critical { background: rgba(239,68,68,0.25); border-left: 3px solid #ef4444; }
+.highlight-warning   { background: rgba(249,115,22,0.20); border-left: 3px solid #f97316; }
+.highlight-info      { background: rgba(59,130,246,0.15); border-left: 3px solid #3b82f6; }
